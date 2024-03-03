@@ -22,3 +22,4 @@ jobs:
         run: npm run build
       - name: Deploy the project
         run: echo "Deploying the project" # this is a placeholder for the actual deployment command.
+        asdf
