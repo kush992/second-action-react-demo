@@ -1,0 +1,16 @@
+name: Run Tests on Push Event
+on: push # This workflow will run on push events
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code from repository
+        uses: actions/checkout@v4 # https://github.com/actions/checkout.
+        # The latest version when creating this action was v4. This will always work on this version until updated here.
+        # this is a good practice as github might update the action with drastic changes and it may interfere this workflow if updated to that version.
+        # to use the latest version always, just use `uses: actions/checkout` without specifying the version.
+        # with: # to configure the actions https://github.com/actions/checkout not mentioning anything as we do not need anything here.
+      - name: Install dependencies
+        run: npm ci # https://docs.npmjs.com/cli/v9/commands/npm-ci
+      - name: Run tests
+        run: npm test # https://docs.npmjs.com/cli/v9/commands/npm-test
