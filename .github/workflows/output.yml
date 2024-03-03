@@ -1,0 +1,13 @@
+name: Output information from the workflow
+on: workflow_dispatch # This workflow will run on manual trigger only.
+
+jobs:
+  info: # this is the job to output the information
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output GitHub context
+        run: echo "${{ toJSON(github) }}"
+      - name: Output the event name and repository name # https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
+        run: echo "The event name is ${{ github.event_name }} and the repository name is ${{ github.repository }}."
+      - name: Output the commit message
+        run: echo "The commit message is ${{ github.event.head_commit.message }}"
