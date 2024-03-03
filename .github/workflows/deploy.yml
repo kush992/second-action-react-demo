@@ -1,5 +1,5 @@
 name: Deploy on Push Event
-on: push # This workflow will run on push events
+on: [push, workflow_dispatch] # This workflow will run on push events & manual trigger. To add more triggers, add them in the array.
 jobs:
   test: # this is taken from the test.yml to have more jobs in the same workflow but testing as first job and deploy as second job.
     runs-on: ubuntu-latest
