@@ -5,8 +5,8 @@ jobs:
   info: # this is the job to output the information
     runs-on: ubuntu-latest
     steps:
-      - name: Output GitHub context
-        run: echo "${{ toJSON(github) }}"
+      - name: Output GitHub context 
+        run: echo "${{ toJSON(github) }}" #: this expression: `${{ }}` is a github expression. https://docs.github.com/en/actions/learn-github-actions/expressions
       - name: Output the event name and repository name # https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
         run: echo "The event name is ${{ github.event_name }} and the repository name is ${{ github.repository }}."
       - name: Output the commit message
